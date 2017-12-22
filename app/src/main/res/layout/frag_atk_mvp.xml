@@ -10,8 +10,11 @@
         android:id="@+id/fam_ll_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorDeepBlue"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <!--buff设置开关-->
         <LinearLayout
@@ -64,20 +67,39 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/tv_common"
+                android:layout_weight="1.3"
+                android:text="ATK"
+                android:textColor="@color/colorWhite" />
+
+            <EditText
+                style="@style/et_common"
+                android:id="@+id/fam_et_atk"
+                android:layout_weight="1.0"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@color/colorDeepBlue"
+                android:inputType="number"
+                android:hint="ATK"
+                android:textColor="@color/colorWhite"/>
 
             <TextView
                 style="@style/tv_common"
-                android:layout_weight="5.0"
-                android:text="ATK"/>
+                android:layout_weight="1.2"
+                android:text="礼装ATK"
+                android:textColor="@color/colorWhite" />
 
-            <EditText
-                android:id="@+id/fam_et_atk"
+            <Spinner
+                android:id="@+id/fam_sp_essence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                style="@style/et_common"
-                android:inputType="number"
-                android:hint="ATK"/>
+                android:spinnerMode="dropdown" />
 
         </LinearLayout>
 
@@ -85,21 +107,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/colorL">
 
             <Spinner
                 android:id="@+id/fam_sp_card1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:spinnerMode="dropdown"/>
+                android:spinnerMode="dropdown" />
 
             <Spinner
                 android:id="@+id/fam_sp_card2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:spinnerMode="dropdown"/>
+                android:spinnerMode="dropdown" />
 
             <Spinner
                 android:id="@+id/fam_sp_card3"
@@ -114,8 +137,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="2dp">
+            android:orientation="horizontal">
 
             <CheckBox
                 android:id="@+id/fam_cb_cr1"
@@ -127,14 +149,12 @@
                 android:id="@+id/fam_cb_cr2"
                 style="@style/cb_np"
                 android:layout_weight="1.0"
-                android:layout_marginLeft="5dp"
                 android:text="暴击"/>
 
             <CheckBox
                 android:id="@+id/fam_cb_cr3"
                 style="@style/cb_np"
                 android:layout_weight="1.0"
-                android:layout_marginLeft="5dp"
                 android:text="暴击"/>
 
         </LinearLayout>
@@ -143,9 +163,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
@@ -153,7 +171,7 @@
                 android:layout_weight="4.0"
                 android:gravity="center"
                 android:text="职阶相性"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/colorWhite"/>
 
             <RadioGroup
                 android:id="@+id/fam_rg_weak"
@@ -175,15 +193,21 @@
                     style="@style/rb_atk"
                     android:layout_width="match_parent"
                     android:layout_weight="1.0"
-                    android:layout_marginLeft="5dp"
                     android:text="克制"/>
+
+                <RadioButton
+                    android:id="@+id/fam_rb_weak_b"
+                    style="@style/rb_atk"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1.0"
+                    android:text="克制狂"
+                    android:visibility="gone"/>
 
                 <RadioButton
                     android:id="@+id/fam_rb_weakened"
                     style="@style/rb_atk"
                     android:layout_width="match_parent"
                     android:layout_weight="1.0"
-                    android:layout_marginLeft="5dp"
                     android:text="被克"/>
 
             </RadioGroup>
@@ -194,9 +218,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
@@ -204,7 +226,7 @@
                 android:layout_weight="4.0"
                 android:gravity="center"
                 android:text="阵营相性"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/colorWhite"/>
 
             <RadioGroup
                 android:id="@+id/fam_rg_team"
@@ -223,14 +245,12 @@
                 <RadioButton
                     android:id="@+id/fam_rb_tweak"
                     style="@style/rb_atk"
-                    android:layout_marginLeft="5dp"
                     android:layout_weight="1.0"
                     android:text="克制"/>
 
                 <RadioButton
                     android:id="@+id/fam_rb_tweakened"
                     style="@style/rb_atk"
-                    android:layout_marginLeft="5dp"
                     android:layout_weight="1.0"
                     android:text="被克"/>
 
@@ -242,9 +262,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
@@ -252,7 +270,7 @@
                 android:layout_weight="4.0"
                 android:gravity="center"
                 android:text="乱数补正"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/colorWhite"/>
 
             <RadioGroup
                 android:id="@+id/fam_rg_random"
@@ -270,14 +288,12 @@
                 <RadioButton
                     android:id="@+id/fam_rb_random_max"
                     style="@style/rb_atk"
-                    android:layout_marginLeft="5dp"
                     android:layout_weight="1.0"
                     android:text="最大"/>
 
                 <RadioButton
                     android:id="@+id/fam_rb_random_average"
                     style="@style/rb_atk"
-                    android:layout_marginLeft="5dp"
                     android:layout_weight="1.0"
                     android:text="平均"
                     android:checked="true"/>
@@ -285,9 +301,9 @@
                 <RadioButton
                     android:id="@+id/fam_rb_random"
                     style="@style/rb_atk"
-                    android:layout_marginLeft="5dp"
                     android:layout_weight="1.0"
-                    android:text="随机"/>
+                    android:text="随机"
+                    android:visibility="gone"/>
 
             </RadioGroup>
 
@@ -332,7 +348,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@+id/fam_iv_character"
-            android:background="@drawable/sh_radius_deepblue_alpha"/>
+            android:background="@mipmap/chat_bg"/>
 
         <TextView
             android:id="@+id/fam_tv_character"
